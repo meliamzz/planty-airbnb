@@ -1,7 +1,12 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <h2 class="planthy">Planthy</h2>
   <% end %>
+
+
+  <div class="search">
+    <button class="search">Search a plant</button>
+  </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -26,9 +31,14 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
+      <div class="log">
+        <li class="nav-item login">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
+        <li class="nav-item new">
+          <%= link_to "New account", new_user_session_path, class: "nav-link" %>
+        </li>
+      </div>
       <% end %>
     </ul>
   </div>
