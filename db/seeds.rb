@@ -10,6 +10,7 @@
 
 
 Plant.destroy_all
+User.destroy_all
 
 balloon_flowers = "Balloon Flowers"
 rose = "Rose"
@@ -36,7 +37,6 @@ paul = User.create!(
       ornamental and fragrant appeal, many can also be used in cooking.",
       height: 99,
       price_per_day: 2,
-      rating: 5,
       user: paul
     )
 
@@ -45,8 +45,7 @@ paul = User.create!(
       variety: "Easter",
       description: "Easter offers bright, colorful blooms. Easter is a forest cactus.",
       height: 45,
-      price_par_day: 7,
-      rating: 3,
+      price_per_day: 7,
       user: paul
     )
 
@@ -55,8 +54,7 @@ paul = User.create!(
       variety: "P. Sentimental Blue",
       description: "This dwarf variety grows about 6 inches tall with lots of 1- to 2-inch purple flowers.",
       height: 79,
-      price_par_day: 3,
-      rating: 4,
+      price_per_day: 3,
       user: paul
     )
 
@@ -67,8 +65,7 @@ paul = User.create!(
       Provins, is one of the most fragrant roses. Its large purple petals intoxicate us from June to
       July.",
       height: 28,
-      price_par_day: 12,
-      rating: 5,
+      price_per_day: 12,
       user: paul
     )
 
@@ -91,8 +88,7 @@ john = User.create!(
       area of red, blue, or purple color that stripes through the middle of the leaves. These color zones
       are more visible in some cultivars and nearly invisible in others.",
       height: 89,
-      price_par_day: 10,
-      rating: 5,
+      price_per_day: 10,
       user: john
     )
 
@@ -102,8 +98,7 @@ john = User.create!(
       description: "This is the most commonly sold variety, as well as the tallest, with 30-inch stems
       and flowers in blue, pink, or white.",
       height: 57,
-      price_par_day: 8,
-      rating: 5,
+      price_per_day: 8,
       user: john
     )
 
@@ -114,8 +109,7 @@ john = User.create!(
       trailing habit that works well in hanging baskets and window boxes. Flowers are usually solid tones
       of pink, red, lilac, or white.",
       height: 120,
-      price_par_day: 2,
-      rating: 5,
+      price_per_day: 2,
       user: john
     )
 
@@ -126,8 +120,7 @@ john = User.create!(
       description:"Particularly well-suited to being grown in a container or planter. It features flowers
       in red, white, or pink.",
       height: 155,
-      price_par_day: 2,
-      rating: 5,
+      price_per_day: 2,
       user: john
     )
 
@@ -145,8 +138,7 @@ arthur = User.create!(
       variety: "P. grandiflorus Komachi",
       description: "The purple-blue flowers in this variety stay in their puffy pillow stage even after blooming.",
       height: 77,
-      price_par_day: 4,
-      rating: 4,
+      price_per_day: 4,
       user: arthur
     )
 
@@ -155,8 +147,7 @@ arthur = User.create!(
       variety: "Platycodon grandiflorus Astra",
       description: "This type grows double flowers with 10 petals in blue, pink, or white. They're an ideal choice to start from seeds.",
       height: 60,
-      price_par_day: 9,
-      rating: 2,
+      price_per_day: 9,
       user: arthur
     )
 
@@ -165,8 +156,7 @@ arthur = User.create!(
       variety: "Bunny ear",
       description: "Bunny ear has 'bunny shaped ears and white flowers. Bunny ear is a desert cactus.",
       height: 10,
-      price_par_day: 5,
-      rating: 4,
+      price_per_day: 5,
       user: arthur
     )
 
@@ -176,8 +166,7 @@ arthur = User.create!(
       description:"This type of wax begonia offers showier foliage; each leaf is green with cream spots
       and marks. The pale pink flowers are a great contrast and make this an eye-catching variety.",
       height: 155,
-      price_par_day: 6,
-      rating: 5,
+      price_per_day: 6,
       user: arthur
     )
 
@@ -195,8 +184,7 @@ leo = User.create!(
       variety: "Old lady",
       description: "Old lady has hair and plenty of spines, and looks like a pincushion. It's a desert cactus.",
       height: 38,
-      price_par_day: 6,
-      rating: 5,
+      price_per_day: 6,
       user: leo
     )
 
@@ -209,8 +197,7 @@ leo = User.create!(
       more solid colors of other annual geraniums. A miniature version of this type is known as the angel
       geranium.",
       height: 95,
-      price_par_day: 1,
-      rating: 1,
+      price_per_day: 1,
       user: leo
     )
 
@@ -221,8 +208,7 @@ leo = User.create!(
       the most popular roses by perfumers. It is even used for the manufacture of petrol and rose water
       especially in southern Morocco.",
       height: 32,
-      price_par_day: 12,
-      rating: 5,
+      price_per_day: 12,
       user: leo
     )
 
@@ -233,8 +219,7 @@ leo = User.create!(
       This variety of roses has the power to bloom in mid-shade from the end of spring and can reach 2
        to 4 meters in length.",
       height: 170,
-      price_par_day: 12,
-      rating: 4,
+      price_per_day: 12,
       user: leo
     )
 
@@ -255,8 +240,7 @@ thomas = User.create!(
       petals, this rose variety is still cultivated in mass in the grassy hinterland. Its fragrance,
       sweet and sweet, is used for the manufacture of essential oils and absolutes.",
       height: 170,
-      price_par_day: 12,
-      rating: 4,
+      price_per_day: 12,
       user: thomas
     )
 
@@ -278,8 +262,7 @@ thomas = User.create!(
       description:"This variety flowers early and stands out for its larger-than-usual blooms. Flowers
       may be white, pink, or red.",
       height: 150,
-      price_par_day: 5,
-      rating: 4,
+      price_per_day: 5,
       user: thomas
     )
 
@@ -291,9 +274,23 @@ thomas = User.create!(
       velvety-textured petals. Easy to grow and resistant to disease, it delights gardeners and
       florists.",
       height: 157,
-      price_par_day: 3,
-      rating: 5,
+      price_per_day: 3,
       user: thomas
     )
 
 # p "Created #{Plant.count} plants"
+
+# Paul a loué la première plante de John pour 5 jours (d'aujourd'hui - 10j à aujourd'hui 5j)
+  # Après la fin de sa loc, Paul a laissé une review sur le Booking de la plante de John
+
+# Créer un Booking
+  # avec le bon pick_up_at   => Date.today
+  # avec le bon returning_at => 10.days, Date.today - 5.days
+  # avec le bon total_price  => 10 price_per_day * 5j => 50
+  # avec le bon status       => "accepted"
+
+# Créer la Review
+  # associé au booking créé juste au dessus
+  # avec un rating
+  # avec un commentaire
+  # avec un user => Paul
