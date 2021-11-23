@@ -11,3 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+}
