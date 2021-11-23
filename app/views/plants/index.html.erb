@@ -2,124 +2,32 @@
   <div class="row">
     <div class="col-8">
 
-    <% @plants.each do |plant|%>
-
-      <div class="my-card d-flex">
-        <div class="my-card-vignet">
-        </div>
-        <div class="my-card-infos d-flex">
-          <div class="my-card-infos-item d-flex">
-            <div class="owner"> <%= plant.user.first_name %> <%= plant.user.last_name %> </div>
-            <div class="favorite">❤️</div>
+<% @plants.each do |plant|%>
+    <%= link_to plant_path(plant.id) do %>
+      <div class="clikable">
+        <div class="my-card d-flex">
+          <div class="my-card-vignet">
           </div>
-          <div class="my-card-infos-item d-flex">
-            <div class="description"> <%= plant.description %> </div>
-          </div>
-          <div class="my-card-infos-item d-flex">
-            <h4 class="title"> <%= plant.variety %>, <%= plant.category %> </h4>
-          </div>
-          <div class="my-card-infos-item d-flex">
-            <div class="address"> <%= plant.user.address %> </div>
-            <div class="price"> <%= plant.price_per_day %> </div>
+          <div class="my-card-infos d-flex">
+            <div class="my-card-infos-item d-flex">
+              <div class="owner"> <%= plant.user.first_name %> <%= plant.user.last_name %> </div>
+              <div class="favorite">❤️</div>
+            </div>
+            <div class="my-card-infos-item d-flex">
+              <div class="description"> <%= plant.description %> </div>
+            </div>
+            <div class="my-card-infos-item d-flex">
+              <h4 class="title"> <%= plant.variety %>, <%= plant.category %> </h4>
+            </div>
+            <div class="my-card-infos-item d-flex">
+              <div class="address"> <%= plant.user.address %> </div>
+              <div class="price"> <%= plant.price_per_day %> </div>
+            </div>
           </div>
         </div>
       </div>
-
-
     <% end %>
-
-
-
-
-
-
-
-
-      <div class="my-card d-flex">
-        <div class="my-card-vignet">
-        </div>
-        <div class="my-card-infos d-flex">
-          <div class="my-card-infos-item d-flex">
-            <div class="owner">Vanessa Bell</div>
-            <div class="favorite">❤️</div>
-          </div>
-          <div class="my-card-infos-item d-flex">
-            <div class="description">Gorgeous and flowery, a gift from my sister.</div>
-          </div>
-          <div class="my-card-infos-item d-flex">
-            <h4 class="title">Hydrangias, Hydrangeaceae</h4>
-          </div>
-          <div class="my-card-infos-item d-flex">
-            <div class="address">46 Gordon Square, Bloomsbury, London</div>
-            <div class="price">2$</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="my-card d-flex">
-        <div class="my-card-vignet"></div>
-        <div class="my-card-infos d-flex">
-          <div class="my-card-infos-item d-flex">
-            <div class="owner">Virginia Euwer</div>
-            <div class="favorite">❤️</div>
-          </div>
-          <div class="my-card-infos-item d-flex">
-            <div class="description">Bunch of lilacs in cold water</div>
-          </div>
-          <div class="my-card-infos-item d-flex">
-            <h3 class="title">Lilacs</h3>
-          </div>
-          <div class="my-card-infos-item d-flex">
-            <div class="address">Saint James Park, Westminster, London</div>
-            <div class="price">2$</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="my-card d-flex">
-        <div class="my-card-vignet"></div>
-        <div class="my-card-infos d-flex">
-          <div class="my-card-infos-item d-flex">
-            <div class="owner">Peter Walsh</div>
-            <div class="favorite">❤️</div>
-          </div>
-          <div class="my-card-infos-item d-flex">
-            <div class="description">Brought back from India last june. Fresh.</div>
-          </div>
-          <div class="my-card-infos-item d-flex">
-            <h3 class="title">Indian Jasmine</h3>
-          </div>
-          <div class="my-card-infos-item d-flex">
-            <div class="address">33, Swan Hill, Paddington, London</div>
-            <div class="price">2$</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="my-card d-flex">
-        <div class="my-card-vignet"></div>
-        <div class="my-card-infos d-flex">
-          <div class="my-card-infos-item d-flex">
-            <div class="owner">Hugh Whitbread</div>
-            <div class="favorite">❤️</div>
-          </div>
-          <div class="my-card-infos-item d-flex">
-            <div class="description">Masjestous violet flowers.</div>
-          </div>
-          <div class="my-card-infos-item d-flex">
-            <h4 class="title">Royal Orchideas</h4>
-          </div>
-          <div class="my-card-infos-item d-flex">
-            <div class="address">Spur road,Buckingam street, London</div>
-            <div class="price">7$</div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
+<% end %>
 
     </div>
     <div class="col-4 relative">
