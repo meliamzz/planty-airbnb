@@ -2,6 +2,39 @@
   <div class="row">
     <div class="col-8">
 
+    <% @plants.each do |plant|%>
+
+      <div class="my-card d-flex">
+        <div class="my-card-vignet">
+        </div>
+        <div class="my-card-infos d-flex">
+          <div class="my-card-infos-item d-flex">
+            <div class="owner"> <%= plant.user.first_name %> <%= plant.user.last_name %> </div>
+            <div class="favorite">❤️</div>
+          </div>
+          <div class="my-card-infos-item d-flex">
+            <div class="description"> <%= plant.description %> </div>
+          </div>
+          <div class="my-card-infos-item d-flex">
+            <h4 class="title"> <%= plant.variety %>, <%= plant.category %> </h4>
+          </div>
+          <div class="my-card-infos-item d-flex">
+            <div class="address"> <%= plant.user.address %> </div>
+            <div class="price"> <%= plant.price_per_day %> </div>
+          </div>
+        </div>
+      </div>
+
+
+    <% end %>
+
+
+
+
+
+
+
+
       <div class="my-card d-flex">
         <div class="my-card-vignet">
         </div>

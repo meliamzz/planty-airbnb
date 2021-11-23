@@ -34,7 +34,10 @@
     font-size: 1rem;
   }
   .description {
-    font-size: 1.1rem;
+    font-size: 0.7rem;
+    overflow: hidden;
+    max-height: 2rem;
+
   }
   .address {
     font-size: 0.8rem;
