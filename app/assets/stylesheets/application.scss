@@ -19,3 +19,20 @@
 body {
   background-color: white;
 }
+
+.border-3 {
+    border-width:3px !important;
+}
+
+.form-control:focus {
+  border-color: #7fb685;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #7fb685;
+}
+
+.input {
+  margin-bottom: 40px;
+}
+
+.devise-links a {
+  color: #7fb685;
+}
