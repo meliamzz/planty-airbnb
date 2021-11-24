@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :plants, only: [:index, :show] do
-    resources :bookings_requests, only: [:create]
+    resources :bookings, only: [:create]
   end
   resources :my_plants, except: [:show]
   resources :bookings, only: [:index] do
@@ -11,5 +11,5 @@ Rails.application.routes.draw do
       patch :decline
     end
   end
-  resources :bookings_requests, only: [:index]
+  resources :bookings, only: [:index]
 end
