@@ -10,10 +10,9 @@
 
 // Your CSS partials
 @import "components/index";
-@import "components/map.scss";
-@import "components/booking-card.scss";
 @import "pages/index";
 @import "pages/show";
+@import "pages/home";
 
 * {
   box-sizing: border-box;

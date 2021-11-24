@@ -1,14 +1,21 @@
 class BookingsController < ApplicationController
   def create
-    @booking = Booking.new(booking_params)
-    @booking.save
-
-    redirect_to plants_path
+    if user_signed_in?
+      @booking = Booking.new(booking_params)
+      @plant = Plant.find(params[:plant_id])
+      @booking.plant = @plant
+      @booking.user = current_user
+      @booking.status = "Waiting for validation"
+      @booking.save
+      redirect_to root_path
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:pick_up_at, :return_at)
+    params.require(:booking).permit(:pick_up_at, :return_at, :plant)
   end
 end
