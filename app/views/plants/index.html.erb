@@ -6,7 +6,8 @@
     <%= link_to plant_path(plant.id) do %>
       <div class="clikable">
         <div class="my-card d-flex">
-          <div class="my-card-vignet">
+          <div class="my-card-vignet" style="background-image: url('<%= cl_image_path plant.photo.key, height: 200, crop: :fill %>')">
+
           </div>
           <div class="my-card-infos d-flex">
             <div class="my-card-infos-item d-flex">
