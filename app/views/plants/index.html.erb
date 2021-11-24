@@ -10,18 +10,17 @@
           </div>
           <div class="my-card-infos d-flex">
             <div class="my-card-infos-item d-flex">
-              <div class="owner"> <%= plant.user.first_name %> <%= plant.user.last_name %> </div>
+              <h4 class="title"> <%= plant.variety %>, <%= plant.category %> </h4>
               <div class="favorite">❤️</div>
+            </div>
+            <div class="my-card-infos-item d-flex">
             </div>
             <div class="my-card-infos-item d-flex">
               <div class="description"> <%= plant.description %> </div>
             </div>
             <div class="my-card-infos-item d-flex">
-              <h4 class="title"> <%= plant.variety %>, <%= plant.category %> </h4>
-            </div>
-            <div class="my-card-infos-item d-flex">
-              <div class="address"> <%= plant.user.address %> </div>
-              <div class="price"> <%= plant.price_per_day %> </div>
+              <div class="address owner"> <%= plant.user.first_name %> <%= plant.user.last_name %>, <%= plant.user.address %> </div>
+              <div class="price"> <%= plant.price_per_day %>$/day </div>
             </div>
           </div>
         </div>
@@ -30,8 +29,13 @@
 <% end %>
 
     </div>
+
     <div class="col-4 relative">
       <div class="map">
+        <div id="map"
+             data-markers="<%= @markers.to_json %>"
+             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
       </div>
     </div>
   </div>
