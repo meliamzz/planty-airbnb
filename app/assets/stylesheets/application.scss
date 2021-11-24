@@ -10,14 +10,36 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/map.scss";
+@import "components/booking-card.scss";
 @import "pages/index";
+@import "pages/show";
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background-color: white;
+}
+
+a {
+ text-decoration:none;
+ color: black;
+}
+
+a:link
+{
+ text-decoration:none;
+ color: black;
+}
+
+a:hover
+{
+ text-decoration:none;
+ color: black;
 }
 
 .border-3 {

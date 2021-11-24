@@ -1,0 +1,25 @@
+@import "home";
+
+
+
+.booking-card {
+
+  flex-direction: column;
+  height: 150px;
+  border: 1px solid black;
+  width: 500px;
+  box-shadow: -1px 2px 4px 2px rgba(218, 156, 156, 0.8);
+  border-radius: 6px;
+
+}
+.require-card {
+  flex-direction: column;
+  height: 150px;
+  width: 500px;
+
+}
+
+
+.dates {
+
+}
