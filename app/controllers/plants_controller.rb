@@ -3,6 +3,16 @@ class PlantsController < ApplicationController
 
   def index
     @plants = Plant.all
+    @users = User.all
+
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: user }),
+        image_url: helpers.asset_url('sunflower.png')
+      }
+    end
   end
 
   def show

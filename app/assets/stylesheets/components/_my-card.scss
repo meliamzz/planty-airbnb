@@ -1,7 +1,7 @@
 .my-card {
   width: 100%;
   height: 200px;
-  margin: 1rem;
+  margin: 1.4rem;
 }
 
 .my-card-full {
@@ -16,6 +16,8 @@
   // background-image: url('https://media.istockphoto.com/photos/purple-and-pink-hydrangea-flowers-picture-id614434354?k=20&m=614434354&s=612x612&w=0&h=LK28TtxngGXqY5aN09vqDftmyuHbiyK2zm8M8H-HS9U=');
   background-image: image-url("hydrangeas.jpeg");
   background-size: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px 0;
 }
 
 .my-card-vignet-full {
@@ -29,7 +31,7 @@
 
 .my-card-infos {
   margin: 1rem;
-  border: 1px solid rgba($color: #000000, $alpha: 0.1);
+  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
   // box-shadow: 1px 1px black, -1px 0 1px black;;
   padding: 1rem;
   width: 100%;
@@ -43,9 +45,12 @@
     font-size: 0.7rem;
   }
   .title {
+    font-size: 1rem;
+    font-weight: 700;
   }
   .favorite {
     font-size: 1rem;
+    margin-left: 1rem;
   }
 
   .favorite-full {

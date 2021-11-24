@@ -1,15 +1,46 @@
 .map {
-  width: 100%;
-  height: 86vh;
-  border: 1px solid black;
-  background-image: url(https://i.pinimg.com/originals/61/63/00/616300b5c7a5031d8bfcd4eca887b8dd.gif);
-  background-repeat: no-repeat;
-  background-size: cover;
+  // width: 100%;
+  // height: 40vh;
+  // border-radius: 8px;
+  // border: 6px solid black;
+  // background-image: url(https://i.pinimg.com/originals/61/63/00/616300b5c7a5031d8bfcd4eca887b8dd.gif);
+  // background-repeat: no-repeat;
+  // background-size: cover;
   position: sticky;
-  top: 14vh;
+  top: 17vh;
+  // box-shadow: 0 2px 2px 0;
+  // margin: 20px;
+}
+
+
+#map {
+  width: 100%;
+  height: 80vh;
+  border-radius: 8px;
+  // border: 6px solid black;
+  // background-image: url(https://i.pinimg.com/originals/61/63/00/616300b5c7a5031d8bfcd4eca887b8dd.gif);
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // position: sticky;
+  // top: 17vh;
+  box-shadow: 0 2px 2px 0;
+  margin: 20px;
 }
 
 
 .relative {
   position: relative;
+}
+
+
+
+.mapboxgl-popup {
+  max-width: 150px;
+    box-shadow: 0 2px 2px 0;
+
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
