@@ -42,7 +42,11 @@
 
     </div>
     <div class="booking-card d-flex mr-5">
-    Ici mettre la form avec les dates et le bouton pour commander
+      <%= simple_form_for [@plant, @booking] do |f| %>
+        <%= f.input :pick_up_at %>
+        <%= f.input :return_at %>
+        <%= f.submit %>
+      <% end %>
 
     </div>
   </div>
