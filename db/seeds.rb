@@ -6,9 +6,6 @@
 # movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # Character.create(name: 'Luke', movie: movies.first)
 
-
-
-
 Plant.destroy_all
 User.destroy_all
 
@@ -18,122 +15,120 @@ cactus_cactaceae = "Cactus-Cactaceae"
 regal_geraniums = "Regal Geraniums"
 wax_begonias = "Wax Begonias"
 
-
-
 paul = User.create!(
-    first_name: "Paul",
-    last_name: "Plant",
-    address: "Nantes",
-    email:"paul.plantes@lewagon.com",
-    password: "azerty"
+  first_name: "Paul",
+  last_name: "Plant",
+  address: "2 Rue de l'Hôtel de Ville, 44000 Nantes",
+  email:"paul.plantes@lewagon.com",
+  password: "azerty"
 )
 
-    Plant.create!(
-      category: regal_geraniums,
-      variety: "Pelargonium domesticum",
-      description:" Scent-leaved geraniums get their fragrance from the oil in their leaves. They can
-      mimic all kinds of scents, including lemon, rose, mint, pine, fruits, and even chocolate. The
-      flowers tend to be small and often insignificant, and the leaf shapes will vary. Besides their
-      ornamental and fragrant appeal, many can also be used in cooking.",
-      height: 99,
-      price_per_day: 2,
-      user: paul
-    )
+paul_plant_one = Plant.create!(
+  category: regal_geraniums,
+  variety: "Pelargonium domesticum",
+  description:" Scent-leaved geraniums get their fragrance from the oil in their leaves. They can
+  mimic all kinds of scents, including lemon, rose, mint, pine, fruits, and even chocolate. The
+  flowers tend to be small and often insignificant, and the leaf shapes will vary. Besides their
+  ornamental and fragrant appeal, many can also be used in cooking.",
+  height: 99,
+  price_per_day: 2,
+  user: paul
+)
 
-    Plant.create!(
-      category: cactus_cactaceae,
-      variety: "Easter",
-      description: "Easter offers bright, colorful blooms. Easter is a forest cactus.",
-      height: 45,
-      price_per_day: 7,
-      user: paul
-    )
+paul_plant_two = Plant.create!(
+  category: cactus_cactaceae,
+  variety: "Easter",
+  description: "Easter offers bright, colorful blooms. Easter is a forest cactus.",
+  height: 45,
+  price_per_day: 7,
+  user: paul
+)
 
-    Plant.create!(
-      category: balloon_flowers,
-      variety: "P. Sentimental Blue",
-      description: "This dwarf variety grows about 6 inches tall with lots of 1- to 2-inch purple flowers.",
-      height: 79,
-      price_per_day: 3,
-      user: paul
-    )
+paul_plant_three = Plant.create!(
+  category: balloon_flowers,
+  variety: "P. Sentimental Blue",
+  description: "This dwarf variety grows about 6 inches tall with lots of 1- to 2-inch purple flowers.",
+  height: 79,
+  price_per_day: 3,
+  user: paul
+)
 
-    Plant.create!(
-      category: rose,
-      variety: "La Rosa Gallica Officinalis",
-      description:"In the category of old roses, the Rosa Gallica Officinalis, also called Rose de
-      Provins, is one of the most fragrant roses. Its large purple petals intoxicate us from June to
-      July.",
-      height: 28,
-      price_per_day: 12,
-      user: paul
-    )
+paul_plant_four = Plant.create!(
+  category: rose,
+  variety: "La Rosa Gallica Officinalis",
+  description:"In the category of old roses, the Rosa Gallica Officinalis, also called Rose de
+  Provins, is one of the most fragrant roses. Its large purple petals intoxicate us from June to
+  July.",
+  height: 28,
+  price_per_day: 12,
+  user: paul
+)
 
 
 john = User.create!(
-    first_name: "John",
-    last_name: "Plant",
-    address: "Rezé",
-    email:"john.plant@lewagon.com",
-    password: "azerty"
+  first_name: "John",
+  last_name: "Dupont",
+  address: "40 Rue du Louvre, 75001 Paris",
+  email:"john.dupond@lewagon.com",
+  password: "azerty"
 )
 
-    Plant.create!(
-      category: regal_geraniums,
-      variety: "Pelargonium x hortum",
-      description: "This is the most common form, the zonal geranium that is so often planted in patio pots
-      and cemetery plantings, and also as a garden bedding plant. Flowers are generally solid tones of red,
-      purple, pink, salmon, magenta, white, or bicolors. The leaves are oval, growing on succulent stems.
-      Flowers can be single with five petals, or double. The common name zonal geraniums derives from the
-      area of red, blue, or purple color that stripes through the middle of the leaves. These color zones
-      are more visible in some cultivars and nearly invisible in others.",
-      height: 89,
-      price_per_day: 10,
-      user: john
-    )
+john_dupond_one = Plant.create!(
+  category: regal_geraniums,
+  variety: "Pelargonium x hortum",
+  description: "This is the most common form, the zonal geranium that is so often planted in patio pots
+  and cemetery plantings, and also as a garden bedding plant. Flowers are generally solid tones of red,
+  purple, pink, salmon, magenta, white, or bicolors. The leaves are oval, growing on succulent stems.
+  Flowers can be single with five petals, or double. The common name zonal geraniums derives from the
+  area of red, blue, or purple color that stripes through the middle of the leaves. These color zones
+  are more visible in some cultivars and nearly invisible in others.",
+  height: 89,
+  price_per_day: 10,
+  user: john
+)
 
-    Plant.create!(
-      category: balloon_flowers,
-      variety: "P. grandiflorus Fuji series",
-      description: "This is the most commonly sold variety, as well as the tallest, with 30-inch stems
-      and flowers in blue, pink, or white.",
-      height: 57,
-      price_per_day: 8,
-      user: john
-    )
+john_dupond_two = Plant.create!(
+  category: balloon_flowers,
+  variety: "P. grandiflorus Fuji series",
+  description: "This is the most commonly sold variety, as well as the tallest, with 30-inch stems
+  and flowers in blue, pink, or white.",
+  height: 57,
+  price_per_day: 8,
+  user: john
+)
 
-    Plant.create!(
-      category: regal_geraniums,
-      variety: "Pelargonium paltatum",
-      description: "This is ivy-leaved geranium, which looks very similar to zonal geraniums but with a
-      trailing habit that works well in hanging baskets and window boxes. Flowers are usually solid tones
-      of pink, red, lilac, or white.",
-      height: 120,
-      price_per_day: 2,
-      user: john
-    )
+john_dupond_three = Plant.create!(
+  category: regal_geraniums,
+  variety: "Pelargonium paltatum",
+  description: "This is ivy-leaved geranium, which looks very similar to zonal geraniums but with a
+  trailing habit that works well in hanging baskets and window boxes. Flowers are usually solid tones
+  of pink, red, lilac, or white.",
+  height: 120,
+  price_per_day: 2,
+  user: john
+)
 
 
-    Plant.create!(
-      category: wax_begonias,
-      variety: "Varsity",
-      description:"Particularly well-suited to being grown in a container or planter. It features flowers
-      in red, white, or pink.",
-      height: 155,
-      price_per_day: 2,
-      user: john
-    )
+jaohn_dupond_four = Plant.create!(
+  category: wax_begonias,
+  variety: "Varsity",
+  description:"Particularly well-suited to being grown in a container or planter. It features flowers
+  in red, white, or pink.",
+  height: 155,
+  price_per_day: 2,
+  user: john
+)
 
 
 arthur = User.create!(
     first_name: "Arthur",
-    last_name: "Plant",
-    email:"arthur.plant@lewagon.com",
-    address: "Bouguenais",
+    last_name: "Briand",
+    email:"arthur.briand@lewagon.com",
+    address: "18 Rue François Garcin, 69003 Lyon",
     password: "azerty"
 )
 
-    Plant.create!(
+    arthur_briand_one = Plant.create!(
       category: balloon_flowers,
       variety: "P. grandiflorus Komachi",
       description: "The purple-blue flowers in this variety stay in their puffy pillow stage even after blooming.",
@@ -142,7 +137,7 @@ arthur = User.create!(
       user: arthur
     )
 
-    Plant.create!(
+    arthur_briand_two = Plant.create!(
       category: balloon_flowers,
       variety: "Platycodon grandiflorus Astra",
       description: "This type grows double flowers with 10 petals in blue, pink, or white. They're an ideal choice to start from seeds.",
@@ -151,7 +146,7 @@ arthur = User.create!(
       user: arthur
     )
 
-    Plant.create!(
+    arthur_briand_three = Plant.create!(
       category: cactus_cactaceae,
       variety: "Bunny ear",
       description: "Bunny ear has 'bunny shaped ears and white flowers. Bunny ear is a desert cactus.",
@@ -160,7 +155,7 @@ arthur = User.create!(
       user: arthur
     )
 
-    Plant.create!(
+    arthur_briand_four = Plant.create!(
       category: wax_begonias,
       variety: "Paint Splash Pink",
       description:"This type of wax begonia offers showier foliage; each leaf is green with cream spots
@@ -173,13 +168,13 @@ arthur = User.create!(
 
 leo = User.create!(
     first_name: "Léo",
-    last_name: "Plant",
-    email:"leo.plant@lewagon.com",
-    address: "Vertou",
+    last_name: "Durand",
+    email:"leo.durand@lewagon.com",
+    address: "Pl. Pey Berland, 33000 Bordeaux",
     password: "azerty"
 )
 
-    Plant.create!(
+    leo_durand_one = Plant.create!(
       category: cactus_cactaceae,
       variety: "Old lady",
       description: "Old lady has hair and plenty of spines, and looks like a pincushion. It's a desert cactus.",
@@ -188,7 +183,7 @@ leo = User.create!(
       user: leo
     )
 
-    Plant.create!(
+    leo_durand_two = Plant.create!(
       category: regal_geraniums,
       variety: "Pelargonium × domesticum",
       description:"These are larger plants with large, crinkled leaves. Plants are upright with woody
@@ -201,7 +196,7 @@ leo = User.create!(
       user: leo
     )
 
-    Plant.create!(
+    leo_durand_three = Plant.create!(
       category: rose,
       variety: " Rose of Damas",
       description:"Renowned since antiquity for its enchanting fragrance, the Damascus rose is one of
@@ -212,7 +207,7 @@ leo = User.create!(
       user: leo
     )
 
-    Plant.create!(
+    leo_durand_four = Plant.create!(
       category: rose,
       variety: " Rose of Alba Semi-plena",
       description:"The large flat and white petals of the Alba Semi-plena rose are very fragrant.
@@ -227,13 +222,13 @@ leo = User.create!(
 
 thomas = User.create!(
     first_name: "Thomas",
-    last_name: "Plant",
-    email:"thomas.plant@lewagon.com",
-    address: "Sautron",
+    last_name: "Hugo",
+    email:"thomas.hugo@lewagon.com",
+    address: "Pl. Broglie, 67000 Strasbourg",
     password: "azerty"
 )
 
-    Plant.create!(
+    thomas_hugo_one = Plant.create!(
       category: rose,
       variety: " Rose of Centifolia",
       description:"Called centifolia (one hundred leaves in French) because of its large number of
@@ -244,7 +239,7 @@ thomas = User.create!(
       user: thomas
     )
 
-    Plant.create!(
+    thomas_hugo_two = Plant.create!(
       category: regal_geraniums,
       variety: "Pelargonium domesticum",
       description:" Scent-leaved geraniums get their fragrance from the oil in their leaves. They can
@@ -256,7 +251,7 @@ thomas = User.create!(
       user: thomas
     )
 
-    Plant.create!(
+    thomas_hugo_three = Plant.create!(
       category: wax_begonias,
       variety: "Super Olympia",
       description:"This variety flowers early and stands out for its larger-than-usual blooms. Flowers
@@ -267,7 +262,7 @@ thomas = User.create!(
     )
 
 
-    Plant.create!(
+    thomas_hugo_four = Plant.create!(
       category: rose,
       variety: " Rose of 'Roseraie de l'Hay'",
       description:"This rose is both popular for its honey and clove fragrance, and its
@@ -280,7 +275,7 @@ thomas = User.create!(
 
 # p "Created #{Plant.count} plants"
 
-# Paul a loué la première plante de John pour 5 jours (d'aujourd'hui - 10j à aujourd'hui 5j)
+# Paul a loué la première plante de John pour 5 jours (d'aujourd'hui - 10j à aujourd'hui - 5j)
   # Après la fin de sa loc, Paul a laissé une review sur le Booking de la plante de John
 
 # Créer un Booking
@@ -294,3 +289,25 @@ thomas = User.create!(
   # avec un rating
   # avec un commentaire
   # avec un user => Paul
+
+booking = Booking.create!(
+  user: paul,
+  plant: john_dupond_one,
+  pick_up_at: Date.today - 10.days,
+  return_at: Date.today - 5.days,
+  total_price: 50,
+  status: "accepted"
+)
+
+Review.create!(
+  user:    paul,
+  booking: booking,
+  content: "Thank you Planthy, John's plant is the most beautiful plant I’ve ever seen in my life",
+  rating:  5
+)
+
+# Demander si on inscrit l' id ou le nom
+# Demander comment calculer les jours et le prix
+
+# -----------------------------------------------------------------
+# TODO: créer 4 bookings supplémentaires avec leur reviews
