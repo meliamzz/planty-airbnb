@@ -29,6 +29,10 @@ paul = User.create!(
   password: "azerty"
 )
 
+file = File.open(Rails.root.join('db/seeds/users/user-1.jpg'))
+user_1.photo.attach(io: file, filename: 'user_1.jpg', content_type: 'image/jpg')
+user_1.save!
+
 paul_plant_one = Plant.create!(
   category: regal_geraniums,
   variety: "Pelargonium domesticum",
@@ -97,6 +101,10 @@ john = User.create!(
   email:"john.dupond@lewagon.com",
   password: "azerty"
 )
+
+file = File.open(Rails.root.join('db/seeds/users/user_2.jpg'))
+user_2.photo.attach(io: file, filename: 'user_2.jpg', content_type: 'image/jpg')
+user_2.save!
 
 john_dupond_one = Plant.create!(
   category: regal_geraniums,
@@ -171,6 +179,11 @@ arthur = User.create!(
     password: "azerty"
 )
 
+file = File.open(Rails.root.join('db/seeds/users/user_3.jpg'))
+user_3.photo.attach(io: file, filename: 'user_3.jpg', content_type: 'image/jpg')
+user_3.save!
+
+
 arthur_briand_one = Plant.create!(
   category: balloon_flowers,
   variety: "P. grandiflorus Komachi",
@@ -236,6 +249,11 @@ leo = User.create!(
     address: "Pl. Pey Berland, 33000 Bordeaux",
     password: "azerty"
 )
+
+file = File.open(Rails.root.join('db/seeds/users/user_4.jpg'))
+user_4.photo.attach(io: file, filename: 'user_4.jpg', content_type: 'image/jpg')
+user_4.save!
+
 
 leo_durand_one = Plant.create!(
   category: cactus_cactaceae,
@@ -309,6 +327,10 @@ thomas = User.create!(
   address: "Pl. Broglie, 67000 Strasbourg",
   password: "azerty"
 )
+
+file = File.open(Rails.root.join('db/seeds/users/user_5.jpg'))
+user_5.photo.attach(io: file, filename: 'user_5.jpg', content_type: 'image/jpg')
+user_5.save!
 
 
 thomas_hugo_one = Plant.create!(
@@ -391,12 +413,15 @@ thomas_hugo_four.save!
   # avec un commentaire
   # avec un user => Paul
 
+start_time = (6..10).to_a.sample
+end_time = (1..5).to_a.sample
+
 booking = Booking.create!(
   user: paul,
   plant: john_dupond_one,
-  pick_up_at: Date.today - 10.days,
-  return_at: Date.today - 5.days,
-  total_price: 50,
+  pick_up_at: Date.today - start_time.days,
+  return_at: Date.today - end_time.days,
+  total_price: ((end_time - start_time) * john_dupond_one.price_per_day),
   status: "accepted"
 )
 
@@ -407,8 +432,72 @@ Review.create!(
   rating:  5
 )
 
-# Demander si on inscrit l' id ou le nom
-# Demander comment calculer les jours et le prix
+start_time = (1..5).to_a.sample
+end_time = (6..10).to_a.sample
 
-# -----------------------------------------------------------------
-# TODO: créer 4 bookings supplémentaires avec leur reviews
+booking = Booking.create!(
+  user: paul,
+  plant: thomas_hugo_four,
+  pick_up_at: Date.today - start_time.days,
+  return_at: Date.today - end_time.days,
+  total_price:((end_time - start_time) * thomas_hugo_four.price_per_day),
+  status: "accepted"
+)
+
+Review.create!(
+  user:    paul,
+  booking: booking,
+  content: "Thank you, that was perfect",
+  rating:  4
+)
+
+start_time = (6..10).to_a.sample
+end_time = (1..5).to_a.sample
+
+booking = Booking.create!(
+  user: paul,
+  plant: leo_durand_four,
+  pick_up_at:Date.today - start_time.days,
+  return_at: Date.today - end_time.days,
+  total_price: ((end_time - start_time) * leo_durand_four.price_per_day),
+  status: "declined"
+)
+
+start_time = (6..10).to_a.sample
+end_time = (1..5).to_a.sample
+
+
+booking = Booking.create!(
+  user: paul,
+  plant: arthur_briand_four,
+  pick_up_at: Date.today - start_time.days,
+  return_at: Date.today - end_time.days,
+  total_price: ((end_time - start_time) * arthur_briand_four.price_per_day),
+  status: "accepted"
+)
+
+Review.create!(
+  user:    paul,
+  booking: booking,
+  content: "Thank you",
+  rating:  3
+)
+
+start_time = (1..5).to_a.sample
+end_time = (6..10).to_a.sample
+
+booking = Booking.create!(
+  user: paul,
+  plant: john_dupond_four,
+  pick_up_at: Date.today - start_time.days,
+  return_at: Date.today - end_time.days,
+  total_price: ((end_time - start_time) * john_dupond_four.price_per_day),
+  status: "accepted"
+)
+
+Review.create!(
+  user:    paul,
+  booking: booking,
+  content: "Ok, its cool",
+  rating:  3
+)
