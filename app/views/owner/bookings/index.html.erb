@@ -1,0 +1,33 @@
+<h2>All my bookings</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h3>Waiting for validation</h3>
+      <div class="to-validate">
+
+      </div>
+    </div>
+    <div class="col-6">
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <% @bookings.each do |booking| %>
+    <% @renter = User.find(booking.user_id) %>
+    <% @plant = Plant.find(booking.plant_id) %>
+    <% if booking.status == "Waiting for validation" %>
+
+      <h3>Bookings pending</h3>
+      <%= booking %>
+
+    <% elsif booking.status == "accepted" %>
+      <%= booking.status %>
+
+      <%= @renter.last_name %>
+      <%= @renter.first_name %>
+    <% end %>
+  <% end %>
+</div>
