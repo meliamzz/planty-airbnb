@@ -2,7 +2,12 @@ class PlantsController < ApplicationController
   before_action :set_plant, only: [ :show ]
 
   def index
-    @plants = Plant.all
+    if params[:query].present?
+      sql_query = "category ILIKE :query OR variety ILIKE :query OR description ILIKE :query"
+      @plants = Plant.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @plants = Plant.all
+    end
     @users = User.all
 
     @markers = @users.geocoded.map do |user|

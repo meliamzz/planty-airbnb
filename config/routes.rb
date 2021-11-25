@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index]
 
   namespace :owner do
-    resources :plants, except: [:show]
+    resources :my_plants
     resources :bookings, only: [:index] do
       member do
         patch :accept

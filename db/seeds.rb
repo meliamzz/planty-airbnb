@@ -21,6 +21,7 @@ regal_geraniums = "Regal Geraniums"
 wax_begonias = "Wax Begonias"
 
 puts "paul set up"
+puts "Create paul"
 paul = User.create!(
   first_name: "Paul",
   last_name: "Plant",
@@ -29,10 +30,11 @@ paul = User.create!(
   password: "azerty"
 )
 
-file = File.open(Rails.root.join('db/seeds/users/user-1.jpg'))
-user_1.photo.attach(io: file, filename: 'user_1.jpg', content_type: 'image/jpg')
-user_1.save!
+file = File.open(Rails.root.join('db/seeds/users/user_1.jpg'))
+paul.photo.attach(io: file, filename: 'user_1.jpg', content_type: 'image/jpg')
+paul.save!
 
+puts "paul plant one"
 paul_plant_one = Plant.create!(
   category: regal_geraniums,
   variety: "Pelargonium domesticum",
@@ -45,6 +47,8 @@ paul_plant_one = Plant.create!(
 file = File.open(Rails.root.join('db/seeds/plants/paul_plant_one.jpg'))
 paul_plant_one.photo.attach(io: file, filename: 'paul_plant_one.jpg', content_type: 'image/jpg')
 paul_plant_one.save!
+
+puts "paul plant two"
 
 paul_plant_two = Plant.create!(
   category: cactus_cactaceae,
@@ -59,7 +63,7 @@ file = File.open(Rails.root.join('db/seeds/plants/paul_plant_two.jpg'))
 paul_plant_two.photo.attach(io: file, filename: 'paul_plant_two.jpg', content_type: 'image/jpg')
 paul_plant_two.save!
 
-
+puts "paul plant three"
 paul_plant_three = Plant.create!(
   category: balloon_flowers,
   variety: "P. Sentimental Blue",
@@ -73,7 +77,7 @@ file = File.open(Rails.root.join('db/seeds/plants/paul_plant_three.jpg'))
 paul_plant_three.photo.attach(io: file, filename: 'paul_plant_three.jpg', content_type: 'image/jpg')
 paul_plant_three.save!
 
-
+puts "paul plant four"
 paul_plant_four = Plant.create!(
   category: rose,
   variety: "La Rosa Gallica Officinalis",
@@ -88,7 +92,7 @@ file = File.open(Rails.root.join('db/seeds/plants/paul_plant_four.jpg'))
 paul_plant_four.photo.attach(io: file, filename: 'paul_plant_four.jpg', content_type: 'image/jpg')
 paul_plant_four.save!
 
-
+puts "john set up"
 john = User.create!(
   first_name: "John",
   last_name: "Dupont",
@@ -98,8 +102,8 @@ john = User.create!(
 )
 
 file = File.open(Rails.root.join('db/seeds/users/user_2.jpg'))
-user_2.photo.attach(io: file, filename: 'user_2.jpg', content_type: 'image/jpg')
-user_2.save!
+john.photo.attach(io: file, filename: 'user_2.jpg', content_type: 'image/jpg')
+john.save!
 
 john_dupond_one = Plant.create!(
   category: regal_geraniums,
@@ -158,6 +162,8 @@ file = File.open(Rails.root.join('db/seeds/plants/john_dupond_four.jpg'))
 john_dupond_four.photo.attach(io: file, filename: 'john_dupond_four.jpg', content_type: 'image/jpg')
 john_dupond_four.save!
 
+puts "arthur set up"
+
 arthur = User.create!(
   first_name: "Arthur",
   last_name: "Briand",
@@ -167,8 +173,8 @@ arthur = User.create!(
 )
 
 file = File.open(Rails.root.join('db/seeds/users/user_3.jpg'))
-user_3.photo.attach(io: file, filename: 'user_3.jpg', content_type: 'image/jpg')
-user_3.save!
+arthur.photo.attach(io: file, filename: 'user_3.jpg', content_type: 'image/jpg')
+arthur.save!
 
 arthur_briand_one = Plant.create!(
   category: balloon_flowers,
@@ -223,6 +229,8 @@ file = File.open(Rails.root.join('db/seeds/plants/arthur_briand_four.jpg'))
 arthur_briand_four.photo.attach(io: file, filename: 'arthur_briand_four.jpg', content_type: 'image/jpg')
 arthur_briand_four.save!
 
+puts "leo set up"
+
 leo = User.create!(
   first_name: "Léo",
   last_name: "Durand",
@@ -232,8 +240,8 @@ leo = User.create!(
 )
 
 file = File.open(Rails.root.join('db/seeds/users/user_4.jpg'))
-user_4.photo.attach(io: file, filename: 'user_4.jpg', content_type: 'image/jpg')
-user_4.save!
+leo.photo.attach(io: file, filename: 'user_4.jpg', content_type: 'image/jpg')
+leo.save!
 
 leo_durand_one = Plant.create!(
   category: cactus_cactaceae,
@@ -289,6 +297,8 @@ file = File.open(Rails.root.join('db/seeds/plants/leo_durand_four.jpg'))
 leo_durand_four.photo.attach(io: file, filename: 'leo_durand_four.jpg', content_type: 'image/jpg')
 leo_durand_four.save!
 
+puts "thomas set up"
+
 thomas = User.create!(
   first_name: "Thomas",
   last_name: "Hugo",
@@ -298,8 +308,8 @@ thomas = User.create!(
 )
 
 file = File.open(Rails.root.join('db/seeds/users/user_5.jpg'))
-user_5.photo.attach(io: file, filename: 'user_5.jpg', content_type: 'image/jpg')
-user_5.save!
+thomas.photo.attach(io: file, filename: 'user_5.jpg', content_type: 'image/jpg')
+thomas.save!
 
 thomas_hugo_one = Plant.create!(
   category: rose,
@@ -357,6 +367,7 @@ file = File.open(Rails.root.join('db/seeds/plants/thomas_hugo_four.jpg'))
 thomas_hugo_four.photo.attach(io: file, filename: 'thomas_hugo_four.jpg', content_type: 'image/jpg')
 thomas_hugo_four.save!
 
+puts "Finished !"
 
 # p "Created #{Plant.count} plants"
 
