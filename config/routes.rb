@@ -12,5 +12,4 @@ Rails.application.routes.draw do
       patch :decline
     end
   end
-  resources :bookings, only: [:index]
 end
