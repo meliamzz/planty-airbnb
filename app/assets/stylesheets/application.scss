@@ -76,3 +76,26 @@ h3, h4, h2 {
 .card-title-validates {
   font-size: 0.9em;
 }
+
+.title-bookings {
+  letter-spacing: 0.5em;
+  font-weight: 300;
+}
+
+
+
+
+
+
+li {
+  list-style: none;
+}
+
+.border-radius {
+  border-radius: 50%;
+  border: $green 2px solid;
+}
+
+.text-booking {
+  letter-spacing: 0.4em;
+}

@@ -1,0 +1,24 @@
+<h3 class="text-center m-5 title-bookings">All my bookings</h3>
+
+<div class="container d-flex mt-3">
+  <ul class="w-100">
+    <% @bookings.each do |booking| %>
+      <% @owner = User.find(booking.user_id) %>
+      <% @plant = Plant.find(booking.plant_id) %>
+      <li class="border-bottom pt-2">
+        <div class="row w-80 m-2 mx-auto text-right">
+          <div class="col-3">
+            <%= cl_image_tag @plant.photo.key, height: 100, width: 100, crop: :fill, class: "border-radius" %>
+          </div>
+          <div class="col-6 text-left">
+            <h5><%= @plant.category %></h5>
+            <p> Owner : <%=@owner.last_name.upcase %> <%= @owner.first_name.capitalize %></p>
+          </div>
+          <div class="col-3 text-left status-booking">
+            <p><%= booking.status.capitalize %></p>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
