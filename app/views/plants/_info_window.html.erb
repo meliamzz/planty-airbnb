@@ -1,2 +1,5 @@
-<p><%= user.first_name %><%= user.last_name %></p>
-<p><%= user.address %></p>
+<%= link_to root_path do %>
+<p><% user.plants.each do |plant| %></p>
+<p><%= plant.variety %></p>
+<% end %>
+<% end %>
