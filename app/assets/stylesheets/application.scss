@@ -14,6 +14,7 @@
 @import "pages/show";
 @import "pages/home";
 
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -42,8 +43,8 @@ a:hover
 }
 
 .border-3 {
-    border-width:3px !important;
-    border-radius: 10px !important;
+  border-width:3px !important;
+  border-radius: 10px !important;
 }
 
 .form-control:focus {
@@ -57,4 +58,21 @@ a:hover
 
 label {
   margin-bottom: 0;
+}
+
+
+.validation-card {
+  border-radius: 10px;
+}
+
+h3, h4, h2 {
+  font-family: 'Roboto', sans-serif;
+}
+
+.card-img-top, .validation-card {
+  overflow: hidden;
+}
+
+.card-title-validates {
+  font-size: 0.9em;
 }
