@@ -1,0 +1,34 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+    <h2>My plants</h2>
+
+<% @user.plants.each do |plant| %>
+    <%= link_to owner_my_plant_path(plant.id) do %>
+      <div class="clikable">
+        <div class="my-card d-flex">
+          <div class="my-card-vignet" style="background-image: url('<%= cl_image_path plant.photo.key, height: 200, crop: :fill %>')">
+
+          </div>
+          <div class="my-card-infos d-flex">
+            <div class="my-card-infos-item d-flex">
+              <h4 class="title"> <%= plant.variety %>, <%= plant.category %> </h4>
+              <div class="favorite">❤️</div>
+            </div>
+            <div class="my-card-infos-item d-flex">
+            </div>
+            <div class="my-card-infos-item d-flex">
+              <div class="description"> <%= plant.description %> </div>
+            </div>
+            <div class="my-card-infos-item d-flex">
+              <div class="price"> <%= plant.price_per_day %>$/day </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+<% end %>
+    </div>
+  </div>
+</div>
