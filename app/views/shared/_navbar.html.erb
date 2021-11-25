@@ -12,7 +12,7 @@
     <% if user_signed_in? %>
       <div class="col-3 login text-center border-bottom">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
-        <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "p-3 button-to" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "p-3 button-to" %>
       </div>
     <% else %>
       <div class="col-3 login text-center border-bottom">
