@@ -1,33 +1,46 @@
-<h2>All my bookings</h2>
-
-<div class="container">
-  <div class="row">
-    <div class="col-6">
-      <h3>Waiting for validation</h3>
-      <div class="to-validate">
-
-      </div>
-    </div>
-    <div class="col-6">
-
-    </div>
-  </div>
-</div>
-
-<div class="container">
+<div class="container validates-bookings mt-5">
   <% @bookings.each do |booking| %>
     <% @renter = User.find(booking.user_id) %>
     <% @plant = Plant.find(booking.plant_id) %>
-    <% if booking.status == "Waiting for validation" %>
-
-      <h3>Bookings pending</h3>
-      <%= booking %>
-
-    <% elsif booking.status == "accepted" %>
-      <%= booking.status %>
-
-      <%= @renter.last_name %>
-      <%= @renter.first_name %>
-    <% end %>
-  <% end %>
+    <div class="row">
+      <div class="col-7">
+        <h3 class="text-center m-2 p-2">Waiting for validation</h3>
+        <% if booking.status == "Waiting for validation" %>
+          <div class="card d-flex flex-row w-100 validation-card m-2" style="height: 150px">
+            <div class="card-img-top col-3 p-0" >
+              <%= cl_image_tag @plant.photo.key, height: 150, width: 150, crop: :fill %>
+            </div>
+            <div class="card-body p-2">
+              <h4 class="card-title text-center"><%= @renter.last_name.upcase %> <%= @renter.first_name.capitalize %></h4>
+              <div class="dates row justify-content-around">
+                <p class="card-text">From :<%= booking.pick_up_at %></p>
+                <p class="card-text">To : <%= booking.return_at %></p>
+              </div>
+              <div class="row justify-content-around col-12">
+                <%= button_to "Accept", accept_owner_booking_path(booking.id), method: :patch, class: "col-12 btn btn-success text-white" %>
+                <%= button_to "Decline", decline_owner_booking_path(booking.id), method: :patch, class: "col-12 btn btn-danger" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-5">
+        <h3 class="text-center m-2 p-2">Validates</h3>
+        <% if booking.status == "accepted" %>
+          <div class="card d-flex flex-row w-100 validation-card m-2" style="height: 75px">
+            <div class="card-img-top col-3 p-0" >
+              <%= cl_image_tag @plant.photo.key, height: 75, width: 75, crop: :fill %>
+            </div>
+            <div class="card-body p-2">
+              <div class="dates row justify-content-between col-12 p-0 mx-auto">
+                <p class="card-text">From :<%= booking.pick_up_at %></p>
+                <p class="card-text">To : <%= booking.return_at %></p>
+              </div>
+              <h4 class="card-title card-title-validates">Booked by :<%= @renter.last_name.upcase %> <%= @renter.first_name.capitalize %></h4>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+<% end %>
 </div>
