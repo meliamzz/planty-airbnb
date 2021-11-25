@@ -1,24 +1,23 @@
 <div class="navbar-planthy sticky-top">
   <div class="row col-12 d-flex justify-content-center align-self-center h-100 m-0 p-0">
     <div class="col-3 home border-bottom text-center">
-      <%= link_to "Search plants", plants_path, class: "p-3" %>
       <% if user_signed_in? %>
-      <%= link_to "Dashboard", root_path, class: "p-3" %>
       <% end %>
     </div>
-    <div class="col-4 planthy text-center p-0 m-0">
+    <div class="col-5 planthy text-center p-0 m-0">
       <h1 class="planthy-title"><%= link_to "Planthy", root_path %></h1>
     </div>
     <% if user_signed_in? %>
       <div class="col-3 login text-center border-bottom">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "p-3 button-to" %>
         <%= link_to "My plants", owner_my_plants_path, class: "p-3 button-to" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "p-3 button-to" %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
       </div>
     <% else %>
-      <div class="col-3 login text-center border-bottom">
+      <div class="col-2 login text-center border-bottom">
         <%= link_to "Log in", new_user_session_path %>
       </div>
     <% end %>
   </div>
 </div>
+ <%= render "shared/search_bar" %>
