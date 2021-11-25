@@ -5,11 +5,17 @@ Rails.application.routes.draw do
   resources :plants, only: [:index, :show] do
     resources :bookings, only: [:create]
   end
-  resources :my_plants, except: [:show]
-  resources :bookings, only: [:index] do
-    member do
-      patch :accept
-      patch :decline
+  resources :bookings, only: [:index]
+
+  namespace :owner do
+    resources :plants, except: [:show]
+    resources :bookings, only: [:index] do
+      member do
+        patch :accept
+        patch :decline
+      end
     end
   end
+
+
 end
