@@ -94,17 +94,30 @@ h3, h4, h2 {
   font-family: 'Roboto', sans-serif;
 }
 
-.card-img-top, .validation-card {
-  overflow: hidden;
-}
-
 .card-title-validates {
   font-size: 0.9em;
 }
+
+.title-bookings {
+  letter-spacing: 0.5em;
+  font-weight: 300;
+}
+
+li {
+  list-style: none;
+}
+
+.border-radius {
+  border-radius: 50%;
+  border: $green 2px solid;
+}
+
+.text-booking {
+  letter-spacing: 0.4em;
+ }
 
 #collection-title {
   font-family: 'Dancing Script', cursive;
   padding-left: 4.2rem;
   padding-top: 1.6rem;
-
 }

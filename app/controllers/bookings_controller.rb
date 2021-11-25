@@ -5,12 +5,17 @@ class BookingsController < ApplicationController
       @plant = Plant.find(params[:plant_id])
       @booking.plant = @plant
       @booking.user = current_user
-      @booking.status = "Waiting for validation"
+      @booking.status = "pending"
       @booking.save
       redirect_to root_path
     else
       redirect_to new_user_session_path
     end
+  end
+
+  def index
+    @user = current_user
+    @bookings = @user.bookings
   end
 
   private
