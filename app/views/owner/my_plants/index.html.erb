@@ -2,13 +2,15 @@
 <div class="container">
   <div class="row">
     <div class="col-8">
-    <h2>My plants</h2>
-
+    <h2 id="collection-title">My plants</h2>
 <% @user.plants.each do |plant| %>
-    <%= link_to owner_my_plant_path(plant.id) do %>
       <div class="clikable">
         <div class="my-card d-flex">
+        <% if plant.photo.key %>
           <div class="my-card-vignet" style="background-image: url('<%= cl_image_path plant.photo.key, height: 200, crop: :fill %>')">
+        <% else %>
+          <div class="my-card-vignet" style="background-image: url('https://media.gerbeaud.net/2016/12/640/rosiers-en-pots.jpg')">
+        <% end %>
 
           </div>
           <div class="my-card-infos d-flex">
@@ -27,8 +29,23 @@
           </div>
         </div>
       </div>
-    <% end %>
 <% end %>
+    </div>
+    <div class="col-4 relative">
+        <div id="plant-new">
+
+          <%= simple_form_for @plant do |f| %>
+            <%= f.input :title %>
+            <%= f.input :variety %>
+            <%= f.input :category %>
+            <%= f.input :description %>
+            <%= f.input :price_per_day %>
+            <%= f.input :height %>
+            <%= f.input :photo %>
+            <%= f.button :submit %>
+          <% end %>
+
+        </div>
     </div>
   </div>
 </div>

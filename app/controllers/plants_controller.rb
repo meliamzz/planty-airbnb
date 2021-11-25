@@ -9,6 +9,7 @@ class PlantsController < ApplicationController
       @plants = Plant.all
     end
     @users = User.all
+    @plant = Plant.new
 
     @markers = @users.geocoded.map do |user|
       {
@@ -24,9 +25,23 @@ class PlantsController < ApplicationController
     @booking = Booking.new
   end
 
+  def create
+    @plant = Plant.new(params_plant)
+    @plant.user = current_user
+    @plant.save!
+    redirect_to owner_my_plants_path
+  end
+
   private
 
   def set_plant
     @plant = Plant.find(params[:id])
   end
+
+  def params_plant
+    params.require(:plant).permit(:title, :variety, :category, :description, :price_per_day, :height, :photo)
+
+  end
+
+
 end

@@ -1,16 +1,18 @@
-<div class="container">
-  <div class="row m-5">
-    <div class="col p-0">
-      <%= form_tag plants_path, method: :get do %>
-        <div class="d-flex">
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find a plant "
-          %>
-          <%= submit_tag "Search", class: "btn btn-warning ml-2"%>
-        </div>
-      <% end %>
+<div class="absolute">
+  <div class="container">
+    <div class="row m-5">
+      <div class="col p-0">
+        <%= form_tag plants_path, method: :get do %>
+          <div class="d-flex">
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find a plant "
+            %>
+            <%= submit_tag "Search", class: "btn btn-warning ml-2"%>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
