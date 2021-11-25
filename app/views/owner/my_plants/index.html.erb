@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-8">
-    <h2>My plants</h2>
+    <h2 id="collection-title">My plants</h2>
 <% @user.plants.each do |plant| %>
       <div class="clikable">
         <div class="my-card d-flex">
@@ -32,7 +32,6 @@
 <% end %>
     </div>
     <div class="col-4 relative">
-      <div class="plant-new">
         <div id="plant-new">
 
           <%= simple_form_for @plant do |f| %>
@@ -47,7 +46,6 @@
           <% end %>
 
         </div>
-      </div>
     </div>
   </div>
 </div>
