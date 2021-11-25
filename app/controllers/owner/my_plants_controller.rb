@@ -10,6 +10,10 @@ class Owner::MyPlantsController < ApplicationController
   def show
   end
 
+  def method_name
+    
+  end
+
   private
 
   def set_plant
