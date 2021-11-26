@@ -29,6 +29,7 @@
 
   <div class= "container mt-5 d-flex flex-column booking-card pb-2 col-4">
     <p><%= @plant.price_per_day %>$<span>/day</span></p>
+    
       <%= simple_form_for [@plant, @booking] do |f| %>
         <div class="col-12 m-2">
           <div class="row text-left w-100">
