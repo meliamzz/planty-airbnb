@@ -4,8 +4,8 @@
 <div class="container d-flex mt-3">
   <ul class="w-100">
     <% @bookings.each do |booking| %>
-      <% @owner = User.find(booking.user_id) %>
       <% @plant = Plant.find(booking.plant_id) %>
+      <% @owner = @plant.user %>
       <li class="border-bottom pt-2">
         <div class="row w-80 m-2 mx-auto text-right">
           <div class="col-3">

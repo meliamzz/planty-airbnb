@@ -1,6 +1,6 @@
 class Owner::BookingsController < ApplicationController
   def index
-    @bookings = current_user.bookings
+    @bookings = Booking.includes(:plant).where(plants: { user: current_user })
   end
 
   def accept
