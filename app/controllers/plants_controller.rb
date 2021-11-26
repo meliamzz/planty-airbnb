@@ -10,7 +10,6 @@ class PlantsController < ApplicationController
     end
     @users = User.all
     @plant = Plant.new
-
     @markers = @users.geocoded.map do |user|
       {
         lat: user.latitude,
@@ -22,6 +21,7 @@ class PlantsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @booking = Booking.new
   end
 
@@ -40,8 +40,5 @@ class PlantsController < ApplicationController
 
   def params_plant
     params.require(:plant).permit(:title, :variety, :category, :description, :price_per_day, :height, :photo)
-
   end
-
-
 end

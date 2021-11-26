@@ -1,4 +1,14 @@
 .booking-card {
   border: 2px $green solid;
   border-radius: 10px;
+  height: auto;
+  p {
+    font-size: 2em;
+    span {
+    font-size: 0.5em;
+    }
+  }
+  .total-price {
+    font-size: 1.5em;
+  }
 }
