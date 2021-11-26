@@ -67,7 +67,8 @@ class PlantsController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @plant = Plant.find(params[:id])
+    @user = @plant.user
     @booking = Booking.new
   end
 

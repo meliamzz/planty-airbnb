@@ -1,6 +1,6 @@
 <div class="container mt-4">
-  <div class="col-6 mx-auto border border-success border-3 p-3">
-    <h2 class="text-center text-success m-2">Log in</h2>
+  <div class="col-6 mx-auto border border-warning border-3 p-3">
+    <h2 class="text-center text-warning m-2">Log in</h2>
     <div class="col-10 mx-auto">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
@@ -19,12 +19,12 @@
         </div>
 
         <div class="form-actions mb-4">
-          <%= f.button :submit, "Log in", class: "btn btn-success col-12" %>
+          <%= f.button :submit, "Log in", class: "btn btn-warning col-12" %>
         </div>
       <% end %>
     </div>
     <div class="text-center col-10 mx-auto devise-links">
-    <%= render "devise/shared/links", class: "text-success" %>
+    <%= render "devise/shared/links", class: "text-warning" %>
     </div>
   </div>
 </div>
