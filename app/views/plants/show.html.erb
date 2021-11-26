@@ -3,7 +3,7 @@
   <div class="d-flex align-items-end m-5">
     <div class="my-card-full m-0">
       <div class="my-card-vignet-full" style="background-image: url('<%= cl_image_path @plant.photo.key, crop: :fill %>')">
-        
+
       </div>
       <div class="my-card-infos">
         <div class="my-card-infos-item d-flex mb-2">
@@ -26,7 +26,6 @@
     </div>
   </div>
 
-<<<<<<< HEAD
   <div class= "container mt-5 d-flex flex-column booking-card pb-2 col-4 position-relative">
     <p><%= @plant.price_per_day %>$<span>/day</span></p>
 
@@ -34,15 +33,6 @@
         <div class="col-12 m-2">
           <div class="row text-left w-100">
             <%= f.input :pick_up_at, label: "From" %>
-=======
-
-  <div class= "container mt-5 d-flex flex-column booking-card py-2 col-4 mb-5">
-    <p class="flex-grow-1 text-right"><%= @plant.price_per_day %>$<span>/day</span></p>
-    <%= simple_form_for [@plant, @booking] do |f| %>
-      <div class="col-12 m-2">
-        <div class="row text-left">
-          <%= f.input :pick_up_at, label: "From" %>
->>>>>>> 615e2af85d082aa50ef6b9fb30b701be6381da99
           </div>
           <div class="row text-left col">
             <%= f.input :return_at, label: "To" %>
@@ -51,26 +41,20 @@
         <div class="row text-left">
           <%= f.input :return_at, label: "To" %>
         </div>
-<<<<<<< HEAD
+        <div class="col-12 text-center">
+          <%= f.button :submit, class: "btn btn-warning col-6 m-1", value: "Book now!" %>
+        </div>
       <% end %>
     <div class="review position-absolute">
-    <h3>Reviews</h3><p>"</p>
-    <p>I booked it for a birthday party.</p>
-    <p>🐅🐩🐪My appartment looked like deep jungle🦒🦬🦏!</p>
-    <p>My friend 🦍Balou🦍 was amazed and drunk</p>
-    <p>Paul Plant ❤️❤️🌻</p>
-    <p>"</p>
-    <p></p>
-    <p></p>
-    <p></p>
-
+      <h3>Reviews</h3><p>"</p>
+      <p>I booked it for a birthday party.</p>
+      <p>🐅🐩🐪My appartment looked like deep jungle🦒🦬🦏!</p>
+      <p>My friend 🦍Balou🦍 was amazed and drunk</p>
+      <p>Paul Plant ❤️❤️🌻</p>
+      <p>"</p>
+      <p></p>
+      <p></p>
+      <p></p>
     </div>
-=======
-      </div>
-      <div class="col-12 text-center">
-        <%= f.button :submit, class: "btn btn-warning col-6 m-1", value: "Book now!" %>
-      </div>
-    <% end %>
->>>>>>> 615e2af85d082aa50ef6b9fb30b701be6381da99
   </div>
 </div>
