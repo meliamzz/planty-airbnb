@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
       @booking.user = current_user
       @booking.status = "pending"
       @booking.save
-      redirect_to root_path
+      redirect_to bookings_path
     else
       redirect_to new_user_session_path
     end

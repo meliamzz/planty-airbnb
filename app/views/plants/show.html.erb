@@ -1,26 +1,23 @@
-<div class ="container" class= "col-12">
-  <div class="d-flex align-items-end m-5">
-    <div class="my-card-full m-0">
-      <div class="my-card-vignet-full col-9" style="background-image: url('<%= cl_image_path @plant.photo.key, height: 200, crop: :fill %>')">
+<div class ="container" class= "col-8 m-3">
+  <div class="d-flex align-items-center col-7">
+    <div class="my-card-full">
+      <div class="my-card-vignet-full col-12" style="background-image: url('<%= cl_image_path @plant.photo.key, crop: :fill %>')">
       </div>
       <div class="my-card-infos">
-        <div class="my-card-infos-item d-flex">
-          <h4 class="title"> <%= @plant.variety %> <br> <%= @plant.category %> </h4>
+        <div class="my-card-infos-item d-flex mb-2">
+          <h4 class="title-plant-show"> <%= @plant.category %> <br><span><%= @plant.variety %></span> </h4>
         </div>
 
         <div class="my-card-infos-item d-flex">
-          <div class="description-full">
+          <div class="description-full description-plant-show mb-2">
             <%= @plant.description %>
           </div>
         </div>
 
         <div class="my-card-infos-item d-flex">
           <div>
-            <div class="owner"> <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %> </div>
+            <div class="ownen">Owner : <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %> </div>
             <div class="address"><%= @user.address %></div>
-          </div>
-          <div class="price-full">
-            <%= @plant.price_per_day %> $/day
           </div>
         </div>
       </div>
