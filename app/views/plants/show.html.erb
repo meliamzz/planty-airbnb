@@ -1,7 +1,9 @@
-<div class ="container" class= "col-8 m-3">
-  <div class="d-flex align-items-center col-7">
-    <div class="my-card-full">
-      <div class="my-card-vignet-full col-12" style="background-image: url('<%= cl_image_path @plant.photo.key, crop: :fill %>')">
+
+<div class ="container" class= "col-12">
+  <div class="d-flex align-items-end m-5">
+    <div class="my-card-full m-0">
+      <div class="my-card-vignet-full" style="background-image: url('<%= cl_image_path @plant.photo.key, crop: :fill %>')">
+        
       </div>
       <div class="my-card-infos">
         <div class="my-card-infos-item d-flex mb-2">
@@ -24,12 +26,17 @@
     </div>
   </div>
 
+
   <div class= "container mt-5 d-flex flex-column booking-card py-2 col-4 mb-5">
     <p class="flex-grow-1 text-right"><%= @plant.price_per_day %>$<span>/day</span></p>
     <%= simple_form_for [@plant, @booking] do |f| %>
       <div class="col-12 m-2">
         <div class="row text-left">
           <%= f.input :pick_up_at, label: "From" %>
+          </div>
+          <div class="row text-left col">
+            <%= f.input :return_at, label: "To" %>
+          </div>
         </div>
         <div class="row text-left">
           <%= f.input :return_at, label: "To" %>
