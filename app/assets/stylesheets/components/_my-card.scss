@@ -15,6 +15,17 @@
   }
 }
 
+.my-card-vignet {
+  border: 2px $warning solid;
+  min-width: 200px;
+  background-size: cover;
+  margin-left: 0;
+}
+
+.searchbar {
+  padding: 2em;
+}
+
 .my-card {
   width: 100%;
   height: 200px;
@@ -33,7 +44,7 @@
 
 
 .my-card-vignet-full {
-  min-width: 300px;
+  min-width: 200px;
   background-size: cover;
 
 }
@@ -85,11 +96,4 @@
   .price-full {
     font-size: 1.4rem;
   }
-}
-
-.my-card-vignet {
-  border: 2px $warning solid;
-  min-width: 200px;
-  background-size: cover;
-  margin-left: 0;
 }
