@@ -35,12 +35,24 @@
 
 
 .mapboxgl-popup {
+
   max-width: 150px;
   box-shadow: 0 2px 2px 0;
+  background-color: transparent;
 
 }
 
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  background: none;
+
+}
+
+.map-btn {
+  border: 1px solid black;
+  background-color: white;
+  margin: 4px;
+  border-color: #7fb685;
+
 }
