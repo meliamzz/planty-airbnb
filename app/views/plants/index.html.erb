@@ -9,7 +9,7 @@
         <div class="clikable">
           <div class="my-card d-flex">
             <% if plant.photo.key %>
-              <div class="my-card-vignet rounded-circle" style="background-image: url('<%= cl_image_path plant.photo.key, height: 200, crop: :fill %>')">
+              <div class="my-card-vignet rounded-circle" style="background-image: url('<%= cl_image_path plant.photo.key, crop: :fill %>')">
             <% else %>
               <div class="my-card-vignet rounded-circle" style="background-image: url('https://media.gerbeaud.net/2016/12/640/rosiers-en-pots.jpg')">
             <% end %>
