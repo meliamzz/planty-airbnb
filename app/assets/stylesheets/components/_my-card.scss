@@ -1,3 +1,31 @@
+.title-plant {
+  font-size: 1.5em;
+  letter-spacing: 3px;
+  span {
+    font-size: 0.7em
+  }
+}
+
+.price {
+  color: $warning;
+  font-size: 2em;
+  span {
+    color: black;
+    font-size: 0.5em;
+  }
+}
+
+.my-card-vignet {
+  border: 2px $warning solid;
+  min-width: 200px;
+  background-size: cover;
+  margin-left: 0;
+}
+
+.searchbar {
+  padding: 2em;
+}
+
 .my-card {
   width: 100%;
   height: 200px;
@@ -14,16 +42,9 @@
   margin: 1rem;
 }
 
-.my-card-vignet {
-  min-width: 200px;
-  background-size: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 2px 0;
-  margin-left: 0;
-}
 
 .my-card-vignet-full {
-  min-width: 300px;
+  min-width: 200px;
   background-size: cover;
 
 }
@@ -42,15 +63,6 @@
   .owner {
     font-size: 0.7rem;
   }
-  .title {
-    font-size: 1rem;
-    font-weight: 700;
-  }
-  .favorite {
-    font-size: 1rem;
-    margin-left: 1rem;
-  }
-
   .favorite-full {
     font-size: 2rem;
     margin: 0.4rem;
@@ -59,9 +71,7 @@
 
   .description {
     font-size: 0.7rem;
-    overflow: hidden;
     max-height: 2rem;
-
   }
   .description-full {
     font-size: 0.8rem;
@@ -72,13 +82,13 @@
     font-size: 2rem;
     font-style: italic;
     font-family: fantasy;
-
   }
 
   .address {
     font-size: 0.8rem;
     font-style: italic;
   }
+
   .owner {
     font-style: italic;
   }
