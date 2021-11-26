@@ -10,7 +10,6 @@ class PlantsController < ApplicationController
     end
     @users = User.all
     @plant = Plant.new
-
     @markers = @users.geocoded.map do |user|
       {
         lat: user.latitude,

@@ -1,6 +1,6 @@
 <div class ="container" class= "col-8">
-  <div class="master-vh d-flex align-items-end m-5">
-    <div class="my-card-full d-flex flex-column">
+  <div class="d-flex align-items-end m-5">
+    <div class="my-card-full d-flex flex-column m-0">
       <div class="my-card-vignet-full" style="background-image: url('<%= cl_image_path @plant.photo.key, height: 200, crop: :fill %>')">
       </div>
       <div class="my-card-infos d-flex">
@@ -28,21 +28,21 @@
     </div>
   </div>
 
-  <div class= "container mt-5" class= "col-4 p-0">
-    <div class="booking-card d-flex col-12">
+  <div class= "container mt-5 d-flex flex-column booking-card pb-2" class= "col-4 p-0">
+    <p><%= @plant.price_per_day %>$<span>/day</span></p>
       <%= simple_form_for [@plant, @booking] do |f| %>
         <div class="col-12 m-2">
-          <div class="row text-left mx-auto">
+          <div class="row text-left">
             <%= f.input :pick_up_at, label: "From" %>
           </div>
-          <div class="row text-left mx-auto">
+          <div class="row text-left">
             <%= f.input :return_at, label: "To" %>
           </div>
+          <p class="total-price">Total price: </p>
         </div>
         <div class="col-12 text-center">
           <%= f.button :submit, class: "btn btn-success col-6 m-1", value: "Book now!" %>
         </div>
       <% end %>
-    </div>
   </div>
 </div>
