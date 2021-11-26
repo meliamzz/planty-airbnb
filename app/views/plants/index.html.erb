@@ -1,47 +1,39 @@
+<div class="searchbar col-7">
 <%= render "shared/search_bar" %>
+</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-8">
-
-<% @plants.each do |plant|%>
-    <%= link_to plant_path(plant.id) do %>
-      <div class="clikable">
-        <div class="my-card d-flex">
-          <% if plant.photo.key %>
-            <div class="my-card-vignet" style="background-image: url('<%= cl_image_path plant.photo.key, height: 200, crop: :fill %>')">
-          <% else %>
-             <div class="my-card-vignet" style="background-image: url('https://media.gerbeaud.net/2016/12/640/rosiers-en-pots.jpg')">
-          <% end %>
+<div class="row m-5">
+  <div class="col-7">
+    <% @plants.each do |plant|%>
+      <%= link_to plant_path(plant.id) do %>
+        <div class="clikable">
+          <div class="my-card d-flex">
+            <% if plant.photo.key %>
+              <div class="my-card-vignet rounded-circle" style="background-image: url('<%= cl_image_path plant.photo.key, crop: :fill %>')">
+            <% else %>
+              <div class="my-card-vignet rounded-circle" style="background-image: url('https://media.gerbeaud.net/2016/12/640/rosiers-en-pots.jpg')">
+            <% end %>
           </div>
           <div class="my-card-infos d-flex">
             <div class="my-card-infos-item d-flex">
-              <h4 class="title"> <%= plant.variety %>, <%= plant.category %> </h4>
-              <div class="favorite"></div>
+              <h4 class="title-plant"><%= plant.category %> <br><span><%= plant.variety %> </span></h4>
+
             </div>
-            <div class="my-card-infos-item d-flex">
-            </div>
-            <div class="my-card-infos-item d-flex">
-              <div class="description"> <%= plant.description %> </div>
-            </div>
-            <div class="my-card-infos-item d-flex">
-              <div class="address owner"> <%= plant.user.first_name %> <%= plant.user.last_name %>, <%= plant.user.address %> </div>
-              <div class="price"> <%= plant.price_per_day %>$/day </div>
+              <div class="my-card-infos-item d-flex">
+                <div class="address owner">Owner : <%= plant.user.first_name %> <%= plant.user.last_name %> <br> <%= plant.user.address %> </div>
+                <div class="price"><%= plant.price_per_day %>$<span>/day</span></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-<% end %>
-
-    </div>
-
-    <div class="col-4 relative">
-      <div class="map">
-        <div id="map"
-             data-markers="<%= @markers.to_json %>"
-             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
+  </div>
+  <div class="col-5 relative">
+    <div class="map">
+      <div id="map"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
   </div>

@@ -1,48 +1,56 @@
-<div class ="container" class= "col-8">
-  <div class="d-flex align-items-end m-5">
+<div class ="container" class= "col-12">
+  <div class="d-flex align-items-end m-5 col-8">
     <div class="my-card-full m-0">
-      <div class="my-card-vignet-full" style="background-image: url('<%= cl_image_path @plant.photo.key, height: 200, crop: :fill %>')">
+      <div class="my-card-vignet-full" style="background-image: url('<%= cl_image_path @plant.photo.key, crop: :fill %>')">
+
       </div>
       <div class="my-card-infos">
-        <div class="my-card-infos-item d-flex">
-          <h4 class="title"> <%= @plant.variety %>, <%= @plant.category %> </h4>
-          <p> ⭐️⭐️⭐️⭐️ </p>
+        <div class="my-card-infos-item d-flex mb-2">
+          <h4 class="title-plant-show"> <%= @plant.category %> <br><span><%= @plant.variety %></span> </h4>
         </div>
 
         <div class="my-card-infos-item d-flex">
-          <div class="description-full">
+          <div class="description-full description-plant-show mb-2">
             <%= @plant.description %>
           </div>
         </div>
 
         <div class="my-card-infos-item d-flex">
           <div>
-            <div class="owner"> <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %> </div>
+            <div class="owner">Owner : <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %> </div>
             <div class="address"><%= @user.address %></div>
-          </div>
-          <div class="price-full">
-            <%= @plant.price_per_day %> $/day
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class= "container mt-5 d-flex flex-column booking-card pb-2" class= "col-4 p-0">
+  <div class= "container my-5 d-flex flex-column booking-card p-3 col-4 position-relative">
     <p><%= @plant.price_per_day %>$<span>/day</span></p>
-      <%= simple_form_for [@plant, @booking] do |f| %>
-        <div class="col-12 m-2">
-          <div class="row text-left">
-            <%= f.input :pick_up_at, label: "From" %>
-          </div>
-          <div class="row text-left">
-            <%= f.input :return_at, label: "To" %>
-          </div>
-          <p class="total-price">Total price: </p>
+    <p class="flex-grow-1 text-right"><%= @plant.price_per_day %>$<span>/day</span></p>
+    <%= simple_form_for [@plant, @booking] do |f| %>
+      <div class="">
+        <div class="text-left w-100">
+          <%= f.input :pick_up_at, label: "From" %>
         </div>
-        <div class="col-12 text-center">
-          <%= f.button :submit, class: "btn btn-success col-6 m-1", value: "Book now!" %>
+        <div class="text-left">
+          <%= f.input :return_at, label: "To" %>
         </div>
-      <% end %>
+        <div class="text-center">
+          <%= f.button :submit, class: "btn btn-warning w-50", value: "Book now!" %>
+        </div>
+      </div>
+    <% end %>
+    <div class="review position-absolute">
+      <h3>Reviews</h3><p>"</p>
+      <p>I booked it for a birthday party.</p>
+      <p>🐅🐩🐪My appartment looked like deep jungle🦒🦬🦏!</p>
+      <p>My friend 🦍Balou🦍 was amazed and drunk</p>
+      <p>Paul Plant ❤️❤️🌻</p>
+      <p>"</p>
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
   </div>
 </div>
