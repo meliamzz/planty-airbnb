@@ -27,9 +27,9 @@
     </div>
   </div>
 
-  <div class= "container mt-5 d-flex flex-column booking-card pb-2 col-4">
+  <div class= "container mt-5 d-flex flex-column booking-card pb-2 col-4 position-relative">
     <p><%= @plant.price_per_day %>$<span>/day</span></p>
-    
+
       <%= simple_form_for [@plant, @booking] do |f| %>
         <div class="col-12 m-2">
           <div class="row text-left w-100">
@@ -43,5 +43,17 @@
           <%= f.button :submit, class: "btn btn-warning col-6 m-1", value: "Book now!" %>
         </div>
       <% end %>
+    <div class="review position-absolute">
+    <h3>Reviews</h3><p>"</p>
+    <p>I booked it for a birthday party.</p>
+    <p>🐅🐩🐪My appartment looked like deep jungle🦒🦬🦏!</p>
+    <p>My friend 🦍Balou🦍 was amazed and drunk</p>
+    <p>Paul Plant ❤️❤️🌻</p>
+    <p>"</p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    </div>
   </div>
 </div>
