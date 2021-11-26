@@ -11,12 +11,58 @@ class PlantsController < ApplicationController
     @users = User.all
     @plant = Plant.new
     @markers = @users.geocoded.map do |user|
+      random = rand(1..9)
+      if random == 1
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: user }),
+        image_url: helpers.asset_url('flower.png')
+      }
+      elsif random == 2
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: user }),
+        image_url: helpers.asset_url('grass.jpg')
+      }
+      elsif random == 3
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: user }),
+        image_url: helpers.asset_url('green2.png')
+      }
+      elsif random == 4
       {
         lat: user.latitude,
         lng: user.longitude,
         info_window: render_to_string(partial: "info_window", locals: { user: user }),
         image_url: helpers.asset_url('sunflower.png')
       }
+      elsif random == 5
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: user }),
+        image_url: helpers.asset_url('pink.jpg')
+      }
+      elsif random == 6
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: user }),
+        image_url: helpers.asset_url('yellow.jpg')
+      }
+      else
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: user }),
+        image_url: helpers.asset_url('green.png')
+      }
+      end
+
     end
   end
 
