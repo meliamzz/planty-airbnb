@@ -25,10 +25,9 @@
     </div>
   </div>
 
-
-  <div class= "container my-5 d-flex flex-column booking-card p-3 col-4">
+  <div class= "container my-5 d-flex flex-column booking-card p-3 col-4 position-relative">
+    <p><%= @plant.price_per_day %>$<span>/day</span></p>
     <p class="flex-grow-1 text-right"><%= @plant.price_per_day %>$<span>/day</span></p>
-
     <%= simple_form_for [@plant, @booking] do |f| %>
       <div class="">
         <div class="text-left w-100">
@@ -42,5 +41,16 @@
         </div>
       </div>
     <% end %>
+    <div class="review position-absolute">
+      <h3>Reviews</h3><p>"</p>
+      <p>I booked it for a birthday party.</p>
+      <p>🐅🐩🐪My appartment looked like deep jungle🦒🦬🦏!</p>
+      <p>My friend 🦍Balou🦍 was amazed and drunk</p>
+      <p>Paul Plant ❤️❤️🌻</p>
+      <p>"</p>
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
   </div>
 </div>
