@@ -1,8 +1,8 @@
-
 <div class ="container" class= "col-8">
   <div class="master-vh d-flex flex-column align-items-end m-5">
-    <div class="my-card-full d-flex">
+    <div class="my-card-full d-flex flex-column">
       <div class="my-card-vignet-full" style="background-image: url('<%= cl_image_path @plant.photo.key, height: 200, crop: :fill %>')">
+        <%= image_tag @plant.photo.key, height: 200, crop: :fill %>
       </div>
       <div class="my-card-infos d-flex">
         <div class="my-card-infos-item d-flex">
@@ -18,8 +18,8 @@
 
         <div class="my-card-infos-item d-flex">
           <div>
-            <div class="owner"> Vanessa Bell </div>
-            <div class="address">46 Gordon Square, Bloomsbury, London</div>
+            <div class="owner"> <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %> </div>
+            <div class="address"><%= @user.address %></div>
           </div>
           <div class="price-full">
             <%= @plant.price_per_day %> $/day
@@ -33,10 +33,10 @@
     <div class="booking-card d-flex col-12">
       <%= simple_form_for [@plant, @booking] do |f| %>
         <div class="col-12 m-2">
-          <div class="row text-left">
+          <div class="row text-left mx-auto">
             <%= f.input :pick_up_at, label: "From" %>
           </div>
-          <div class="row text-left">
+          <div class="row text-left mx-auto">
             <%= f.input :return_at, label: "To" %>
           </div>
         </div>
