@@ -17,6 +17,7 @@
 
 .my-card-vignet {
   border: 2px $warning solid;
+  border-radius: 50%;
   min-width: 200px;
   background-size: cover;
   margin-left: 0;
@@ -61,7 +62,7 @@
 .my-card-infos-item {
   justify-content: space-between;
   .owner {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 
   .description {

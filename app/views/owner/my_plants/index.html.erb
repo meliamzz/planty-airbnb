@@ -1,40 +1,30 @@
-
 <div class="container">
   <div class="row">
     <div class="col-8">
-    <h2>My plants</h2>
-
-<% @plants.each do |plant| %>
-
+      <% @plants.each do |plant| %>
       <div class="clikable">
         <div class="my-card d-flex">
-        <% if plant.photo.key %>
-          <div class="my-card-vignet" style="background-image: url('<%= cl_image_path plant.photo.key, height: 200, crop: :fill %>')">
-        <% else %>
-          <div class="my-card-vignet" style="background-image: url('https://media.gerbeaud.net/2016/12/640/rosiers-en-pots.jpg')">
-        <% end %>
-
-          </div>
+          <% if plant.photo.key %>
+            <div class="my-card-vignet" style="background-image: url('<%= cl_image_path plant.photo.key, crop: :fill %>')">
+          <% else %>
+            <div class="my-card-vignet" style="background-image: url('https://media.gerbeaud.net/2016/12/640/rosiers-en-pots.jpg')">
+          <% end %>
+        </div>
           <div class="my-card-infos d-flex">
             <div class="my-card-infos-item d-flex">
-              <h4 class="title"> <%= plant.variety %>, <%= plant.category %> </h4>
+              <h4 class="title-my-plant"> <%= plant.category %> <br><span><%= plant.variety %></span> </h4>
             </div>
             <div class="my-card-infos-item d-flex">
-            </div>
-            <div class="my-card-infos-item d-flex">
-              <div class="description"> <%= plant.description %> </div>
-            </div>
-            <div class="my-card-infos-item d-flex">
-              <div class="price"> <%= plant.price_per_day %>$/day </div>
+              <div class="price-my-plant"><%= plant.price_per_day %>$<span>/day</span> </div>
             </div>
           </div>
         </div>
       </div>
 <% end %>
     </div>
-    <div class="col-4 relative">
-        <div id="plant-new">
-
+    <div class="col-4">
+      <div id="plant-new">
+        <h5 class="title-new-plant text-center">New plant</h5>
           <%= simple_form_for @plant do |f| %>
             <%= f.input :title %>
             <%= f.input :variety %>
@@ -43,9 +33,8 @@
             <%= f.input :price_per_day %>
             <%= f.input :height %>
             <%= f.input :photo %>
-            <%= f.button :submit %>
+            <%= f.button :submit, class: "btn btn-warning" %>
           <% end %>
-
         </div>
     </div>
   </div>
