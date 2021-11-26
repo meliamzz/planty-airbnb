@@ -1,6 +1,5 @@
-
 <div class ="container" class= "col-12">
-  <div class="d-flex align-items-end m-5">
+  <div class="d-flex align-items-end m-5 col-8">
     <div class="my-card-full m-0">
       <div class="my-card-vignet-full" style="background-image: url('<%= cl_image_path @plant.photo.key, crop: :fill %>')">
 
@@ -18,7 +17,7 @@
 
         <div class="my-card-infos-item d-flex">
           <div>
-            <div class="ownen">Owner : <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %> </div>
+            <div class="owner">Owner : <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %> </div>
             <div class="address"><%= @user.address %></div>
           </div>
         </div>
@@ -26,25 +25,22 @@
     </div>
   </div>
 
-  <div class= "container mt-5 d-flex flex-column booking-card pb-2 col-4 position-relative">
+  <div class= "container my-5 d-flex flex-column booking-card p-3 col-4 position-relative">
     <p><%= @plant.price_per_day %>$<span>/day</span></p>
-
-      <%= simple_form_for [@plant, @booking] do |f| %>
-        <div class="col-12 m-2">
-          <div class="row text-left w-100">
-            <%= f.input :pick_up_at, label: "From" %>
-          </div>
-          <div class="row text-left col">
-            <%= f.input :return_at, label: "To" %>
-          </div>
+    <p class="flex-grow-1 text-right"><%= @plant.price_per_day %>$<span>/day</span></p>
+    <%= simple_form_for [@plant, @booking] do |f| %>
+      <div class="">
+        <div class="text-left w-100">
+          <%= f.input :pick_up_at, label: "From" %>
         </div>
-        <div class="row text-left">
+        <div class="text-left">
           <%= f.input :return_at, label: "To" %>
         </div>
-        <div class="col-12 text-center">
-          <%= f.button :submit, class: "btn btn-warning col-6 m-1", value: "Book now!" %>
+        <div class="text-center">
+          <%= f.button :submit, class: "btn btn-warning w-50", value: "Book now!" %>
         </div>
-      <% end %>
+      </div>
+    <% end %>
     <div class="review position-absolute">
       <h3>Reviews</h3><p>"</p>
       <p>I booked it for a birthday party.</p>
