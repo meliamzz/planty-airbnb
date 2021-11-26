@@ -94,10 +94,10 @@ paul_plant_four.save!
 
 puts "john set up"
 john = User.create!(
-  first_name: "John",
-  last_name: "Dupont",
-  address: "40 Rue du Louvre, 75001 Paris",
-  email: "john.dupond@lewagon.com",
+  first_name: "Balou",
+  last_name: "Balou",
+  address: "new delhi india",
+  email: "balou@jungle.com",
   password: "azerty"
 )
 
