@@ -1,46 +1,49 @@
 
 <div class ="container" class= "col-8">
-<div class="master-vh d-flex flex-column align-items-end m-5">
-  <div class="my-card-full d-flex">
-    <div class="my-card-vignet-full" style="background-image: url('<%= cl_image_path @plant.photo.key, height: 200, crop: :fill %>')">
-      <div class="my-card-infos-item d-flex">
-        <div class="favorite-full"></div>
+  <div class="master-vh d-flex flex-column align-items-end m-5">
+    <div class="my-card-full d-flex">
+      <div class="my-card-vignet-full" style="background-image: url('<%= cl_image_path @plant.photo.key, height: 200, crop: :fill %>')">
+      </div>
+      <div class="my-card-infos d-flex">
+        <div class="my-card-infos-item d-flex">
+          <h4 class="title"> <%= @plant.variety %>, <%= @plant.category %> </h4>
+          <p> ⭐️⭐️⭐️⭐️ </p>
+        </div>
+
+        <div class="my-card-infos-item d-flex">
+          <div class="description-full">
+            <%= @plant.description %>
+          </div>
+        </div>
+
+        <div class="my-card-infos-item d-flex">
+          <div>
+            <div class="owner"> Vanessa Bell </div>
+            <div class="address">46 Gordon Square, Bloomsbury, London</div>
+          </div>
+          <div class="price-full">
+            <%= @plant.price_per_day %> $/day
+          </div>
+        </div>
       </div>
     </div>
-    <div class="my-card-infos d-flex">
+  </div>
 
-      <div class="my-card-infos-item d-flex">
-        <h4 class="title"> <%= @plant.variety %>, <%= @plant.category %> </h4>
-        <p> ⭐️⭐️⭐️⭐️ </p>
-      </div>
-
-      <div class="my-card-infos-item d-flex">
-        <div class="description-full"> <%= @plant.description %> </div>
-      </div>
-
-      <div class="my-card-infos-item d-flex">
-        <div>
-          <div class="owner"> Vanessa Bell </div>
-          <div class="address">46 Gordon Square, Bloomsbury, London</div>
-        </div>
-          <div class="price-full"> <%= @plant.price_per_day %> $/day</div>
-        </div>
-      </div>
-     </div>
-   </div>
-
-  <div class= "container" class= "col-4">
-    <div class="booking-card d-flex ">
+  <div class= "container mt-5" class= "col-4 p-0">
+    <div class="booking-card d-flex col-12">
       <%= simple_form_for [@plant, @booking] do |f| %>
-        <div class="row m-1">
-          <div class="col-6"><%= f.input :pick_up_at %></div>
-          <div class="col-6"><%= f.input :return_at %></div>
+        <div class="col-12 m-2">
+          <div class="row text-left">
+            <%= f.input :pick_up_at, label: "From" %>
+          </div>
+          <div class="row text-left">
+            <%= f.input :return_at, label: "To" %>
+          </div>
         </div>
-          <div class="col-12 text-center">
-          <%= f.button :submit, class: "btn btn-success col-6 m-1" %>
+        <div class="col-12 text-center">
+          <%= f.button :submit, class: "btn btn-success col-6 m-1", value: "Book now!" %>
         </div>
       <% end %>
     </div>
   </div>
-</div>
 </div>
