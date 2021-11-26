@@ -63,11 +63,6 @@
   .owner {
     font-size: 0.7rem;
   }
-  .favorite-full {
-    font-size: 2rem;
-    margin: 0.4rem;
-
-  }
 
   .description {
     font-size: 0.7rem;
@@ -76,21 +71,6 @@
   .description-full {
     font-size: 0.8rem;
     overflow: hidden;
-  }
-
-  .description-full::first-letter {
-    font-size: 2rem;
-    font-style: italic;
-    font-family: fantasy;
-  }
-
-  .address {
-    font-size: 0.8rem;
-    font-style: italic;
-  }
-
-  .owner {
-    font-style: italic;
   }
 
   .price-full {
