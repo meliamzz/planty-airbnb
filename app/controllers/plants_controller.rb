@@ -75,7 +75,12 @@ class PlantsController < ApplicationController
     @plant = Plant.new(params_plant)
     @plant.user = current_user
     @plant.save!
+
     redirect_to owner_my_plants_path
+  end
+
+  def destroy
+    
   end
 
   private

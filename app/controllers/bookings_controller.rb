@@ -7,7 +7,8 @@ class BookingsController < ApplicationController
       @booking.user = current_user
       @booking.status = "pending"
       @booking.save
-      redirect_to root_path
+      # alert js??
+      redirect_to bookings_path
     else
       redirect_to new_user_session_path
     end
@@ -15,7 +16,7 @@ class BookingsController < ApplicationController
 
   def index
     @user = current_user
-    @bookings = @user.bookings
+    @bookings = @user.bookings.sort_by(&:id).reverse
   end
 
   private
