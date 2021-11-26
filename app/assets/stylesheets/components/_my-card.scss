@@ -46,7 +46,8 @@
 .my-card-vignet-full {
   min-width: 200px;
   min-height: 300px;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   border-radius: 10px;
 }
 
