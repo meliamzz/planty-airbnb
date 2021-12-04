@@ -4,4 +4,4 @@ class Owner::MyPlantsController < ApplicationController
     @plants = @user.plants.sort_by(&:id).reverse
     @plant = Plant.new
   end
-end
+end$
