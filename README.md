@@ -9,16 +9,16 @@ Cette application de location de plantes pour événements a été créée dans 
 - Possibilité de louer des plantes parmis celles disponibles, ou de mettre en location ses plantes.
 - Consultation et géolocalisation des plantes disponibles.
 - Réservation via un calendrier.
-- Pour les propriétaires de plante, possibilité d'accepter ou refuser une location via le panneau d'administrateur, et liste des locations à venir.
+- Pour les propriétaires de plantes, possibilité d'accepter ou refuser une location via le panneau d'administrateur, et liste des locations à venir.
 - Pour les locataires, récapitulatif des plantes louées. 
 
-Déployé en ligne, cette application est accessible en cliquant directement sur ce <a href="https://planthy-airbnb.cleverapps.io/">lien!</a>
+Déployée en ligne, cette application est accessible en cliquant directement sur ce <a href="https://planthy-airbnb.cleverapps.io/">lien!</a>
 
  N'hésitez pas à aller visiter le site! 
 
 ## 👩‍💻 Technologies
 
-Les languages utilisés pour cette to do list : 
+Les languages utilisés pour cette application : 
 
 `Ruby On Rails`, `Bootstrap`, `Javascript`, `SCSS`
 
